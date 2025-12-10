@@ -10,37 +10,46 @@
     <div class="signup-box">
         <h2>Signup</h2>
 
-        <form>
+        
+        <form onsubmit="signup(event)">
 
             <div class="input-group">
                 <label>Name</label>
-                <input type="text" placeholder="Enter your name" required>
+                
+                <input id="name" type="text" placeholder="Enter your name" required>
             </div>
 
             <div class="input-group">
                 <label>Email</label>
-                <input type="email" placeholder="Enter your email" required>
+            
+                <input id="email" type="email" placeholder="Enter your email" required>
             </div>
 
             <div class="input-group">
                 <label>Phone</label>
-                <input type="text" placeholder="Enter your phone number" required>
+                
+                <input id="phone" type="text" placeholder="Enter your phone number" required>
             </div>
 
             <div class="input-group">
                 <label>Username</label>
-                <input type="text" placeholder="Choose a username" required>
+            
+                <input id="username" type="text" placeholder="Choose a username" required>
             </div>
 
             <div class="input-group">
                 <label>Password</label>
-                <input type="password" placeholder="Create password" required>
+                
+                <input id="password" type="password" placeholder="Create password" required>
             </div>
 
             <button class="signup-btn" type="submit">Create Account</button>
 
         </form>
     </div>
+
+
+    <script src="signup.js"></script>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-// The Full Database (10 Destinations) with min and max budget ranges
+
 const destinationDatabase = [
     {
         name: "Sikkim, India",
@@ -108,19 +108,17 @@ function recommend() {
     const activity = document.getElementById("activity").value;
     const month = document.getElementById("month").value;
 
-    // Step 1: Find destinations within exact budget range AND matching climate
+
     let matches = destinationDatabase.filter(place => {
         return budget >= place.minBudget && budget <= place.maxBudget && place.climate === climate;
     });
 
-    // Step 2: If no exact matches, find destinations where budget is at least minimum AND matches climate
     if (matches.length === 0) {
         matches = destinationDatabase.filter(place => {
             return budget >= place.minBudget && place.climate === climate;
         });
     }
 
-    // Step 3: If still no matches, just find destinations within budget (ignore climate)
     if (matches.length === 0) {
         matches = destinationDatabase.filter(place => budget >= place.minBudget);
     }
@@ -128,11 +126,11 @@ function recommend() {
     let selectedPlace;
     
     if (matches.length === 0) {
-        // If no destination matches the budget at all, default to Cox's Bazar
+    
         selectedPlace = destinationDatabase[1]; // Cox's Bazar
         alert("Budget is tight! We recommend Cox's Bazar.");
     } else {
-        // Select the best match (closest to budget midpoint)
+        
         selectedPlace = matches.reduce((prev, current) => {
             const prevMid = (prev.minBudget + prev.maxBudget) / 2;
             const currentMid = (current.minBudget + current.maxBudget) / 2;
@@ -142,7 +140,7 @@ function recommend() {
         });
     }
 
-    // Save Data
+    
     localStorage.setItem("recommended", selectedPlace.name);
     localStorage.setItem("travelMonth", month);
 
@@ -150,7 +148,6 @@ function recommend() {
     location.href = "result.html";
 }
 
-// Color change button
 const colorBtn = document.querySelector(".color-button");
 if (colorBtn) {
     const colors = ["red", "blue", "hotpink", "yellow", "orange", "green", "tomato", "purple"];

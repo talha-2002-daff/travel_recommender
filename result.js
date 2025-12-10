@@ -1,4 +1,4 @@
-// ---------------------- IMPORT MAIN DESTINATION DATA ----------------------
+
 const fullDestinationDatabase = [
     {
         name: "Sikkim, India",
@@ -92,7 +92,6 @@ const fullDestinationDatabase = [
     }
 ];
 
-// ---------------------- CLOTHING TIPS ----------------------
 const clothingRecommendations = {
     winter: [
         "Heavy sweaters & jackets",
@@ -128,7 +127,6 @@ const clothingRecommendations = {
     ]
 };
 
-// ---------------------- GET SEASON FUNCTION ----------------------
 function getSeason(month) {
     const seasons = {
         winter: ["december", "january", "february"],
@@ -145,7 +143,6 @@ function getSeason(month) {
     return "summer";
 }
 
-// ---------------------- GET SAVED DATA ----------------------
 const destinationName = localStorage.getItem("recommended");
 const travelMonth = localStorage.getItem("travelMonth") || "january";
 
@@ -165,7 +162,6 @@ if (!data) {
     };
 }
 
-// ---------------------- UPDATE PAGE ----------------------
 document.getElementById("destinationName").textContent = data.name;
 document.getElementById("destinationImage").src = data.image;
 document.getElementById("destinationDescription").textContent = data.description;
@@ -176,7 +172,6 @@ document.getElementById("popularFor").textContent = data.popularFor;
 document.getElementById("selectedMonth").textContent =
     travelMonth.charAt(0).toUpperCase() + travelMonth.slice(1);
 
-// ---------------------- CLOTHING SECTION ----------------------
 const season = getSeason(travelMonth);
 const seasonClothes = clothingRecommendations[season] || clothingRecommendations.summer;
 
@@ -190,7 +185,6 @@ html += "</ul>";
 
 document.getElementById("clothingTips").innerHTML = html;
 
-// ---------------------- NAVIGATION ----------------------
 function goBack() { location.href = "recommend.html"; }
 function goHome() { location.href = "index.html"; }
 
