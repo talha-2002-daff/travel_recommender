@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Recommender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Travel Destination Recommender</h2>
+
+    <label>Select Climate:</label>
+    <select id="climate">
+        <option value="cold">Cold</option>
+        <option value="warm">Warm</option>
+        <option value="moderate">Moderate</option>
+    </select>
+    <br>
+
+    <label>Your Budget (in Taka):</label>
+    <div class="budget-input-container">
+        <input type="number" id="budget" placeholder="Enter amount in Taka" value="20000">
+    </div>
+    
+    <label>Activity Type:</label>
+    <select id="activity">
+        <option value="adventure">Adventure</option>
+        <option value="relax">Relax</option>
+        <option value="culture">Culture</option>
+        <option value="family">Family</option>
+        <option value="honeymoon">Honeymoon</option>
+    </select>
+    <br>
+
+    <label>Travel Month:</label>
+    <select id="month">
+        <option value="january">January</option>
+        <option value="february">February</option>
+        <option value="march">March</option>
+        <option value="april">April</option>
+        <option value="may">May</option>
+        <option value="june">June</option>
+        <option value="july">July</option>
+        <option value="august">August</option>
+        <option value="september">September</option>
+        <option value="october">October</option>
+        <option value="november">November</option>
+        <option value="december">December</option>
+    </select>
+
+    <div class="destination-preview" id="destinationPreview">
+        <h4>Suggested Destination:</h4>
+        <p id="previewDestination">Based on your selections</p>
+        <p id="previewBudget">Estimated Cost: </p>
+    </div>
+
+    <button class="btn" onclick="recommend()">Get Recommendation</button>
+    <button class="btn color-button">Color change</button>
+    <button class="btn danger" onclick="logout()">Logout</button>
+</div>
+
+<script src="recommend.js"></script>
+
+</body>
+</html>

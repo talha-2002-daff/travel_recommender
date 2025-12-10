@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Destination</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <div class="header">
+            <h1>Your Perfect Destination Awaits ✈️</h1>
+            <p>Based on your preferences, we've found the perfect travel destination for you!</p>
+        </div>
+        
+        <img id="destinationImage" class="destination-image" alt="Destination Image">
+        
+        <div class="content-section">
+            <h1 class="destination-title" id="destinationName"></h1>
+            <p class="destination-description" id="destinationDescription"></p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📍 Best Time to Visit</h3>
+                    <p id="bestTime"></p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>💰 Average Cost</h3>
+                    <p id="averageCost"></p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>⏱️ Travel Duration</h3>
+                    <p id="travelDuration"></p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🌟 Popular For</h3>
+                    <p id="popularFor"></p>
+                </div>
+            </div>
+            
+            <div class="content-section clothing-section">
+                <h2>👕 What to Pack for <span id="selectedMonth"></span> <span class="travel-month-badge">Your Travel Month</span></h2>
+                <div class="clothing-tips" id="clothingTips"></div>
+            </div>
+        </div>
+        
+        <div class="button-container">
+            <button class="btn-large btn-back" onclick="goBack()">← Back to Recommendations</button>
+            <button class="btn-large btn-home" onclick="location.href='index.html'">🏠 Go to Homepage</button>
+        </div>
+    </div>
+    
+    <script src="result.js"></script>
+</body>
+</html>
